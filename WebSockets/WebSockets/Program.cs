@@ -1,4 +1,6 @@
 
+using WebSockets.NotificationConnectionManager;
+
 namespace WebSockets
 {
     public class Program
@@ -13,6 +15,7 @@ namespace WebSockets
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddSingleton<INotificationConnectionManager, NotificationConnectionManager.NotificationConnectionManager>();
 
             var app = builder.Build();
 
